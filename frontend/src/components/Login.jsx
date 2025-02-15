@@ -33,8 +33,8 @@ function Login() {
         navigate("/"); 
       }
     } catch (error) {
-      console.error("Login error:", error); // Log full error for debugging
-      toast.error(error.response?.data?.message || "An error occurred"); // Show error message
+      console.error("Login error:", error); 
+      toast.error(error.response?.data?.message || "An error occurred"); 
     } finally {
       setLoading(false); 
     }
