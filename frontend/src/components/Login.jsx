@@ -13,7 +13,7 @@ function Login() {
     password: ""
   });
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false); // Loading state for submit button
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {
@@ -28,13 +28,13 @@ function Login() {
       });
 
       if (res.data.success) {
-        toast.success(res.data.message); 
+        toast.success(res.data.message); // Show success message
         dispatch(setAuthUser(res.data))
-        navigate("/"); 
+        navigate("/"); // Navigate to the dashboard
       }
     } catch (error) {
-      console.error("Login error:", error); 
-      toast.error(error.response?.data?.message || "An error occurred"); 
+      console.error("Login error:", error); // Log full error for debugging
+      toast.error(error.response?.data?.message || "An error occurred"); // Show error message
     } finally {
       setLoading(false); // Reset loading state regardless of success or error
     }
