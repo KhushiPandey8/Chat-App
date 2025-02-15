@@ -36,10 +36,8 @@ function Login() {
       console.error("Login error:", error); 
       toast.error(error.response?.data?.message || "An error occurred"); 
     } finally {
-      setLoading(false); // Reset loading state regardless of success or error
+      setLoading(false); 
     }
-
-    // Reset form fields after submission
     setUser({
       username: "",
       password: ""
